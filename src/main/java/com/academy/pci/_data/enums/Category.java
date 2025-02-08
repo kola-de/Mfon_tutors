@@ -1,0 +1,16 @@
+package com.academy.pci._data.enums;
+
+public enum Category {
+	FOOD,
+	ENTERTAINMENT,
+	TRANSPORTATION,
+	CLOTHINGS,
+	HEALTH_CARE,
+	UTILITIES,
+	HOUSING,
+	INVESTMENTS,
+	SAVINGS,
+	EDUCATION,
+	MISCELLANEOUS;
+	
+}
