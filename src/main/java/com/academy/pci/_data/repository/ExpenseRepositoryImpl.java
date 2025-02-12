@@ -5,7 +5,7 @@ import java.util.List;
 
 import com.academy.pci._data.model.Expenses;
 
-public class ExpenseRepositoryImplmnt implements ExpensesRepository{
+public class ExpenseRepositoryImpl implements ExpenseRepository{
 
 	private final List<Expenses> expensesList = new ArrayList<>();
 

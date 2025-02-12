@@ -1,5 +1,7 @@
 package com.academy.pci._data.model;
 
+import java.time.LocalDateTime;
+
 import com.academy.pci._data.enums.Category;
 
 public class Expenses {
@@ -9,6 +11,7 @@ public class Expenses {
 	private int amount;
 	private String description;
 	private Category category;
+	private LocalDateTime createdAt;
 	
 	
 	//Create constructors
@@ -16,11 +19,12 @@ public class Expenses {
 	}
 	
 	//All-args constructors
-	public Expenses(int id, int amount, String description, Category category) {
+	public Expenses(int id, int amount, String description, Category category, LocalDateTime createdAt) {
 		this.id = id;
 		this.amount = amount;
 		this.description = description;
 		this.category = category;
+		this.createdAt = createdAt;
 	}
 	
 	//Getters and setters
@@ -57,5 +61,13 @@ public class Expenses {
 	
 	public Category getCategory() {
 		return category; 
+	}
+	
+	public void setCreatedAt (LocalDateTime createdAt) {
+		this.createdAt = createdAt;
+	}
+	
+	public LocalDateTime getcreatedAt() {
+		return createdAt;
 	}
 }
