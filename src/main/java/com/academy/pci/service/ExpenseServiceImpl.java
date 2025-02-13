@@ -3,6 +3,9 @@ package com.academy.pci.service;
 import com.academy.pci._data.repository.ExpenseRepository;
 import com.academy.pci._data.repository.ExpenseRepositoryImpl;
 import com.academy.pci.exception.InvalidAmountException;
+
+import java.util.List;
+
 import com.academy.pci._data.model.Expenses;
 
 public class ExpenseServiceImpl implements ExpenseService {
@@ -29,6 +32,32 @@ public class ExpenseServiceImpl implements ExpenseService {
 		
 		
 		return expenseRepository.save(expense);
+	}
+
+	@Override
+	public int calculateTotalExpense() {
+		int totalExpense = 0;
+		
+		for (Expenses expenses : expenseRepository.findAll()) {
+			
+			totalExpense += expenses.getAmount();
+		}
+		
+		return totalExpense;
+	}
+
+	@Override
+	public void deleteExpenses(Expenses delExpense) {
+
+		expenseRepository.delete(delExpense);
+		
+	}
+
+	@Override
+	public List<Expenses> viewAll() {
+		
+		
+		return expenseRepository.findAll();
 	}
 
 	

@@ -1,5 +1,7 @@
 package com.academy.pci._data.repository;
 
+import java.util.List;
+
 import com.academy.pci._data.model.Expenses;
 
 public interface ExpenseRepository {
@@ -9,4 +11,6 @@ public interface ExpenseRepository {
 		void delete(Expenses expenses);
 		
 		Expenses findById(int id);
+		
+		List<Expenses> findAll();
 }

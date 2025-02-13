@@ -42,6 +42,12 @@ public class ExpenseRepositoryImpl implements ExpenseRepository{
 		return null;
 	}
 
+	@Override
+	public List<Expenses> findAll() {
+		
+		return new ArrayList<>(expensesList);
+	}
+
 
 	
 }

@@ -1,6 +1,7 @@
 package com.academy.pci;
 
 
+import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
 
 import java.time.LocalDateTime;
@@ -35,5 +36,48 @@ public class ExpenseServiceTest {
 		assertNotNull(expectedResult);
 		
 	}
+	
+	@Test
+	public void testThatCanCalculateTotalExpenses() throws InvalidAmountException {
+		
+		Expenses calcExpense = new Expenses();
+		
+		calcExpense.setAmount(2500);
+		calcExpense.setCategory(Category.FOOD);
+		calcExpense.setDescription("Dinner with Valentine");
+		calcExpense.setCreatedAt(LocalDateTime.now());
+		
+		expenseService.addExpenses(calcExpense);
+		
+		
+		Expenses calcExpense1 = new Expenses();
+		
+		calcExpense1.setAmount(2500);
+		calcExpense1.setCategory(Category.FOOD);
+		calcExpense1.setDescription("Dinner with Valentine");
+		calcExpense1.setCreatedAt(LocalDateTime.now());
+		
+		expenseService.addExpenses(calcExpense1);
+		
+		int totalExpense = expenseService.calculateTotalExpense();
+		
+		assertEquals(5000, totalExpense);
+	}
+	
+	
+	@Test
+	public void testThatCanDeleteExpenses() {
+		
+Expenses delExpense = new Expenses();
+		
+		delExpense.setId(delExpense.getId());
+		expenseService.deleteExpenses(delExpense);
+		
+		assertNotNull(delExpense);
+		
+		
+	}
+	
+	
 	
 }
