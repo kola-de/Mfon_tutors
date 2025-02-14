@@ -27,7 +27,7 @@ public class ExpenseServiceTest {
 		Expenses expense = new Expenses();
 		
 		expense.setAmount(3000);
-		expense.setCategory(Category.FOOD);
+		expense.setCategory("Rice");
 		expense.setDescription("Dinner with Valentine");
 		expense.setCreatedAt(LocalDateTime.now());
 		
@@ -43,7 +43,7 @@ public class ExpenseServiceTest {
 		Expenses calcExpense = new Expenses();
 		
 		calcExpense.setAmount(2500);
-		calcExpense.setCategory(Category.FOOD);
+		calcExpense.setCategory("Rice");
 		calcExpense.setDescription("Dinner with Valentine");
 		calcExpense.setCreatedAt(LocalDateTime.now());
 		
@@ -53,7 +53,7 @@ public class ExpenseServiceTest {
 		Expenses calcExpense1 = new Expenses();
 		
 		calcExpense1.setAmount(2500);
-		calcExpense1.setCategory(Category.FOOD);
+		calcExpense1.setCategory("Rice");
 		calcExpense1.setDescription("Dinner with Valentine");
 		calcExpense1.setCreatedAt(LocalDateTime.now());
 		

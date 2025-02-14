@@ -10,7 +10,7 @@ public class Expenses {
 	private int id;
 	private int amount;
 	private String description;
-	private Category category;
+	private String category;
 	private LocalDateTime createdAt;
 	
 	
@@ -19,7 +19,7 @@ public class Expenses {
 	}
 	
 	//All-args constructors
-	public Expenses(int id, int amount, String description, Category category, LocalDateTime createdAt) {
+	public Expenses(int id, int amount, String description, String category, LocalDateTime createdAt) {
 		this.id = id;
 		this.amount = amount;
 		this.description = description;
@@ -55,11 +55,11 @@ public class Expenses {
 	}
 	
 	
-	public void setCategory (Category category) { //mutator for category
+	public void setCategory (String category) { //mutator for category
 		this.category = category;
 	}
 	
-	public Category getCategory() {
+	public String getCategory() {
 		return category; 
 	}
 	
