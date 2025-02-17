@@ -14,5 +14,7 @@ public interface ExpenseService {
 	void deleteExpenses(Expenses delExpense);
 	
 	List <Expenses> viewAll();
+	
+	String generateReport();
 
 }

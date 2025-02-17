@@ -60,9 +60,27 @@ public class ExpenseServiceImpl implements ExpenseService {
 		return expenseRepository.findAll();
 	}
 
-	
+	@Override
+	public String generateReport() {
+		List<Expenses> expenseList = expenseRepository.findAll();
+        int calculatedAmount = calculateTotalExpense();
+        if (expenseList.isEmpty()) return "No expenses found";
+        StringBuilder report = new StringBuilder();
+        report.append  ("Expenses: Report \n");
+        report.append("===================\n\n");
+        report.append("Customer expense:\n");
+		
+        for (Expenses expense : expenseList) {
+            report.append(String.format("%s - %s (%s): \n",
+                    //expense.getId(),
+                    expense.getDescription(),
+                    expense.getCategory(),
+                    expense.getAmount()));
+        }
+        report.append(String.format("\nTotal expense: %d\n", calculatedAmount));
+        return report.toString();
+	}
 
-	
 	
 }
 
